@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videojogos</title>
+</head>
+<body>
+    <h1>Videojogos são legais</h1>
+    <hr>
+    <h2>Game mais jogado no momento:</h2>
+    <ul>
+        <li>Titulo: {{titulo}}</li>
+        <li>Ano: {{ano}}</li>
+        <li>Categoria: {{categoria}}</li>
+    </ul>
+    <p>{{titulo}} tem {{2025 - ano}} anos.</p>
+    <hr>
+    <p>{{titulo}} esta sendo jogador por</p>
+    <ol>
+        {% for jogador in jogadores%}
+        <li>{{jogador}}</li>
+        {% endfor %}
+    </ol>
+    <hr>
+    <p>Outros jogos sendo jogados no momento:</p>
+    <ul>
+        {% for jogo in jogos%}
+        <li>{{jogo}}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
