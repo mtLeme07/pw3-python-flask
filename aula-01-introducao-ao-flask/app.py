@@ -13,17 +13,21 @@ def home():
 @app.route("/games")
 #Cria uma função
 def games():
-    titulo = 'Rimworld'
-    ano = 2018
-    categoria = 'Gerenciamento (Simulador de Côlonia)'
-    jogadores = ['Matheus', 'Larissa', 'Kenzo', 'Fred Barbosa', 'Kanisu']
+    
+    # Dicionario (Objeto) em python
+    jogo = {
+    'titulo': 'Rimworld',
+    'ano': 2018,
+    'categoria': 'Gerenciamento (Simulador de Côlonia)',
+}
+    jogadores= ['Matheus', 'Larissa', 'Kenzo', 'Fred Barbosa', 'Kanisu']
+
     jogos = ['CS 2', 'Team Fortress 2', 'Gmod', 'Dwarf Fortress', 'Stardew Valley', 'Dead by Daylight']
     return render_template('games.html', 
-                           titulo=titulo,
-                           ano=ano,
-                           categoria=categoria,
+                           jogo=jogo,
                            jogadores=jogadores,
-                           jogos=jogos)
+                           jogos=jogos
+    )
 
 
 #Inicia o servidor no localhost: (com debug)

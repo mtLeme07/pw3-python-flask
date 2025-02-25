@@ -9,14 +9,23 @@
     <h1>Videojogos são legais</h1>
     <hr>
     <h2>Game mais jogado no momento:</h2>
-    <ul>
-        <li>Titulo: {{titulo}}</li>
-        <li>Ano: {{ano}}</li>
-        <li>Categoria: {{categoria}}</li>
-    </ul>
-    <p>{{titulo}} tem {{2025 - ano}} anos.</p>
+    <!-- <ul>
+        <li>Titulo: {# {titulo} #}</li>
+        <li>Ano: {# {ano} #}</li>
+        <li>Categoria: {# {categoria} #}</li>
+    </ul> -->
+
+{% for chave, valor in jogo.items() %}
+<details>
+    <summary>{{chave}}
+    </summary>     {{valor}}
+</details>
+{% endfor %}
+
+
+    <p>{{jogo['titulo']}} tem {{2025 - jogo['ano']}} anos.</p>
     <hr>
-    <p>{{titulo}} esta sendo jogador por</p>
+    <p>{{jogo['titulo']}} esta sendo jogador por</p>
     <ol>
         {% for jogador in jogadores%}
         <li>{{jogador}}</li>
@@ -25,7 +34,7 @@
     <hr>
     <p>Outros jogos sendo jogados no momento:</p>
     <ul>
-        {% for jogo in jogos%}
+        {% for jogo in jogos %}
         <li>{{jogo}}</li>
         {% endfor %}
     </ul>
