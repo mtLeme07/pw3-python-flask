@@ -15,7 +15,7 @@
         <li>Categoria: {# {categoria} #}</li>
     </ul> -->
 
-{% for chave, valor in jogo.items() %}
+{% for chave, valor in game.items() %}
 <details>
     <summary>{{chave}}
     </summary>     {{valor}}
@@ -23,9 +23,9 @@
 {% endfor %}
 
 
-    <p>{{jogo['titulo']}} tem {{2025 - jogo['ano']}} anos.</p>
+    <p>{{game['titulo']}} tem {{2025 - game['ano']}} anos.</p>
     <hr>
-    <p>{{jogo['titulo']}} esta sendo jogador por</p>
+    <p>{{game['titulo']}} esta sendo jogador por</p>
     <ol>
         {% for jogador in jogadores %}
         <li>{{jogador}}</li>
@@ -41,8 +41,8 @@
     <hr>
     <p>Outros jogos sendo jogados no momento:</p>
     <ul>
-        {% for jogo in jogos %}
-        <li>{{jogo}}</li>
+        {% for game in games %}
+        <li>{{game}}</li>
         {% endfor %}
     </ul>
 
