@@ -22,4 +22,17 @@ class Game(db.Model):
         self.preco = preco
         self.quantidade = quantidade
     
+class Console(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    nome = db.Column(db.String(150))
+    fabricante = db.Column(db.String(150))
+    preco = db.Column(db.Float)
+    quantidade = db.Column(db.Integer)
+    
+    def __init__(self, nome, fabricante, preco, quantidade):
+        self.nome = nome
+        self.fabricante = fabricante
+        self.preco = preco
+        self.quantidade = quantidade
+    
     
