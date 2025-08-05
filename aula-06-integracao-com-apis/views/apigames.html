@@ -1,0 +1,6 @@
+{% for jogo in listaJogos%}
+<img src="{{jogo.thumbnail}}"><br>
+<a href={{jogo.game_url}}>{{jogo.title}}</a>
+<p>{{jogo.genre}}</p>
+<br>
+{% endfor %}
