@@ -1,6 +1,18 @@
-{% for jogo in listaJogos%}
-<img src="{{jogo.thumbnail}}"><br>
-<a href={{jogo.game_url}}>{{jogo.title}}</a>
-<p>{{jogo.genre}}</p>
-<br>
-{% endfor %}
+{% extends 'base.html' %}
+{% block content %}
+<div class="container" style="background-color:#f0f0f0; border-radius: 8px;">
+    <div class="row">
+        {% for jogo in listaJogos%}
+        <div class="col-md-3 m-auto">
+            <div class="card" style="width: 16rem;">
+                <img src="{{jogo.thumbnail}}"><br>
+                <div class="card-body">
+                    <a href={{jogo.game_url}}>{{jogo.title}}</a>
+                    <p>{{jogo.genre}}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

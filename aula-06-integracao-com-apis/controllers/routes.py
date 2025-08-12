@@ -123,9 +123,20 @@ def init_app(app):
         return render_template('editconsole.html', console=console)
     
     @app.route('/apigames', methods=['GET', 'POST'])
-    def apigames():
+    @app.route('/apigames/<int:id>', methods=['GET', 'POST'])
+    def apigames(id=None):
         urlApi = 'https://www.freetogame.com/api/games'
         response = urllib.request.urlopen(urlApi)
         apiData = response.read()
         listaJogos = json.loads(apiData)
+        gameInfo = []
+        if id:
+            for jogo in listaJogos:
+                if jogo['id'] == id:
+                    gameInfo = jogo
+                    break
+            if gameInfo:
+                return render_template('gameinfo.html', gameInfo=gameInfo)
+            else:
+                return f'Jogo {id} não encontrado.'
         return render_template('apigames.html', listaJogos=listaJogos)
