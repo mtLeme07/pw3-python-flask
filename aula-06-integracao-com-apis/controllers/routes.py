@@ -122,6 +122,8 @@ def init_app(app):
             return redirect(url_for('consolesEstoque'))
         return render_template('editconsole.html', console=console)
     
+
+
     @app.route('/apigames', methods=['GET', 'POST'])
     @app.route('/apigames/<int:id>', methods=['GET', 'POST'])
     def apigames(id=None):
@@ -140,3 +142,24 @@ def init_app(app):
             else:
                 return f'Jogo {id} não encontrado.'
         return render_template('apigames.html', listaJogos=listaJogos)
+
+    @app.route('/apichess', methods=['GET', 'POST'])
+    @app.route('/apichess/<id>', methods=['GET', 'POST'])
+    def apichess(id=None):
+        urlApi = 'https://lichess.org/api/player'
+        response = urllib.request.urlopen(urlApi)
+        apiData = response.read()
+        data = json.loads(apiData)
+        listaUser = data["rapid"]
+        print(listaUser)
+        userInfo = []
+        if id:
+            for user in listaUser:
+                if user['id'] == id:
+                    userInfo = user
+                    break
+            if userInfo:
+                return render_template('userInfo.html', userInfo=userInfo)
+            else:
+                return f'Usuario {id} não encontrado.'
+        return render_template('apichess.html', listaUser=listaUser)

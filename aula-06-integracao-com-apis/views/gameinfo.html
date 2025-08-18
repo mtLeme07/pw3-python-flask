@@ -1,20 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container" style="background-color:#f0f0f0; border-radius: 8px;">
-    <div class="row">
-            <div class="card">
-                <img src="{{gameInfo.thumbnail}}"><br>
-                <div class="card-body">
-                    <a style="textAlign: 'center'" href={{gameInfo.game_url}}>{{gameInfo.title}}</a>
-                    <p>{{gameInfo.genre}}</p>
-                    <p>{{gameInfo.plataform}}</p>
-                    <p>{{gameInfo.developer}}</p>
-                    <p>{{gameInfo.release_date}}</p>
-                </div>
-            </div>
-        </div>
-    </div>
+<a href="{{url_for('apigames')}}" class="btn btn-secondary">Voltar</a><br><br>
+<div style="align-items: center;">
+<img src="{{gameInfo.thumbnail}}">
+<h3>{{gameInfo.title}}</h3>
+<p>{{gameInfo.short_description}}</p>
+<p>{{gameInfo.platform}}</p>
+<p>{{gameInfo.publisher}}</p>
+<p>{{gameInfo.release_date}}</p>
 </div>
+<a href="{{gameInfo.freetogame_profile_url}}" class="btn btn-primary">Jogar agora!</a>
 
 {% endblock content %}

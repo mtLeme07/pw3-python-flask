@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container" style="background-color:#f0f0f0; border-radius: 8px;">
+    <div class="row">
+        <h1>Top 10 Jogadores de Xadrez no Lichess (Categoria 10 min.)</h1>
+        <ol>
+        {% for user in listaUser%}
+                <div class="card-body">
+                    <li><a href="{{url_for('apichess', id=user.id)}}">{{user.username}}</a> {% if user.title %}({{user.title}}){% endif %}</li>
+                </div>
+        {% endfor %}
+        </ol>
+    </div>
+</div> 
+{% endblock content %}

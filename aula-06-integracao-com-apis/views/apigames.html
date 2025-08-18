@@ -7,12 +7,14 @@
             <div class="card" style="width: 16rem;">
                 <img src="{{jogo.thumbnail}}"><br>
                 <div class="card-body">
-                    <a href={{jogo.game_url}}>{{jogo.title}}</a>
+                    <a href="{{url_for('apigames', id=jogo.id)}}">{{jogo.title}}</a>
                     <p>{{jogo.genre}}</p>
+                    <p>{{jogo.release_date}}</p>
+                    <p>{{jogo.publisher}}</p>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
-</div>
+</div> 
 {% endblock content %}

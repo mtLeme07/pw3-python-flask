@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{{url_for('apichess')}}" class="btn btn-secondary">Voltar</a><br><br>
+<div style="align-items: center;">
+<h2>{% if userInfo.title %}({{userInfo.title}}){% endif %} {{userInfo.username}}</h2>
+<p>({{userInfo.id}})</p>
+<p>Online: {% if userInfo.online %} Sim! {% else %} Não. {% endif %}</p>
+<p>Rating atual: {{userInfo.perfs["rapid"].rating}}</p>
+</div>
+{% endblock content %}
