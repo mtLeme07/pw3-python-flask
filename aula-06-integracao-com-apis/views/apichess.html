@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container" style="background-color:#f0f0f0; border-radius: 8px;">
+<div class="container text-dark" style="border-radius: 8px; background-color: #ccc;">
     <div class="row">
-        <h1>Top 10 Jogadores de Xadrez no Lichess (Categoria 10 min.)</h1>
+        <h1 class="text-dark">Top 10 Jogadores de Xadrez no Lichess (Categoria 10 min.)</h1>
         <ol>
         {% for user in listaUser%}
                 <div class="card-body">

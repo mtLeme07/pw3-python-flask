@@ -2,10 +2,12 @@
 
 {% block content %}
 <a href="{{url_for('apichess')}}" class="btn btn-secondary">Voltar</a><br><br>
-<div style="align-items: center;">
-<h2>{% if userInfo.title %}({{userInfo.title}}){% endif %} {{userInfo.username}}</h2>
+<div class="h-flex p-2 mx-auto text-center">
+<h2>{% if userInfo.title %}<b>({{userInfo.title}})</b>{% endif %} {{userInfo.username}}</h2>
 <p>({{userInfo.id}})</p>
 <p>Online: {% if userInfo.online %} Sim! {% else %} Não. {% endif %}</p>
 <p>Rating atual: {{userInfo.perfs["rapid"].rating}}</p>
+
+<p class="text-{% if userInfo.perfs['rapid'].progress > 0 %}primary {% elif userInfo.perfs['rapid'].progress < 0 %}danger{% else %}secondary{% endif %}">Ultima Mudança: {{userInfo.perfs["rapid"].progress}}</p>
 </div>
 {% endblock content %}

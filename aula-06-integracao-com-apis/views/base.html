@@ -7,31 +7,34 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
     <title>The Games</title>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{{url_for('home')}}">The Games</a>
+<body class="bg-dark text-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+        <b><a class="navbar-brand text-light" href="{{url_for('home')}}">The Games</a></b>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+        <div class="collapse navbar-collapse text-light" id="navbarNav">
+          <ul class="navbar-nav text-light">
             <li class="nav-item active">
-              <a class="nav-link" href="{{url_for('home')}}">Início</a>
+              <a class="nav-link text-light" href="{{url_for('home')}}">Início</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('games')}}">Listas</a>
+              <a class="nav-link text-light" href="{{url_for('games')}}">Listas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('cadgames')}}">Dicionários</a>
+              <a class="nav-link text-light" href="{{url_for('cadgames')}}">Dicionários</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('gamesEstoque')}}">CRUD - Jogos</a>
+              <a class="nav-link text-light" href="{{url_for('gamesEstoque')}}">CRUD - Jogos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('consolesEstoque')}}">CRUD - Consoles</a>
+              <a class="nav-link text-light" href="{{url_for('consolesEstoque')}}">CRUD - Consoles</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('apigames')}}">Catálogo de Jogos (API)</a>
+              <a class="nav-link text-light" href="{{url_for('apigames')}}">Catálogo de Jogos (API)</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="{{url_for('apichess')}}">Jogadores de Xadres (API)</a>
             </li>
           </ul>
         </div>

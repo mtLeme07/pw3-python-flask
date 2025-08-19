@@ -157,6 +157,7 @@ def init_app(app):
             for user in listaUser:
                 if user['id'] == id:
                     userInfo = user
+                    print()
                     break
             if userInfo:
                 return render_template('userInfo.html', userInfo=userInfo)
